@@ -1,0 +1,6 @@
+<button mat-button (click)="addNewTodo()">Add new todo</button>
+<mat-progress-bar [color]="'yellow'" [mode]="'indeterminate'" *ngIf="isLoading">
+</mat-progress-bar>
+<mat-list role="list" *ngFor="let item of toDos">
+    <mat-list-item role="listitem">{{item.title}}</mat-list-item>
+</mat-list>

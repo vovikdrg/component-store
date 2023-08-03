@@ -1,0 +1,15 @@
+<button mat-button (click)="addNewTodo()">Add new todo</button>
+
+
+<mat-progress-bar [color]="'yellow'" [mode]="'indeterminate'" *ngIf="(isLoading$ | async)">
+</mat-progress-bar>
+<br>
+<input [formControl]="filter" placeholder="Filter"/>
+<br>
+<mat-list role="list" >
+    <mat-list-item role="listitem" *ngFor="let item of filteredTodos$ | async">
+        <div matListItemTitle> {{item.title}}</div>
+        <button matListItemMeta (click)="deleteItem(item)">Delete</button>
+    </mat-list-item>
+
+</mat-list>
